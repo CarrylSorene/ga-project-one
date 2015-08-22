@@ -12,19 +12,19 @@ var player1 = 0;
 
 // array to store card combinations: ['dinosaur', giraffe', 'goat', 'lion', 'snake', 'zebra']
 
-var startingBoard = ['giraffe1', 'giraffe2', 'lion1', 'lion2' 'zebra1', 'zebra2'];
-var winningPairs = [['giraffe1', 'giraffe2'], ['lion1' 'lion2'], ['zebra1' 'zebra2']];
+var startingBoard = ['giraffe1', 'giraffe2', 'lion1', 'lion2', 'zebra1', 'zebra2'];
+var winningPairs = [['giraffe1', 'giraffe2'], ['lion1', 'lion2'], ['zebra1', 'zebra2']];
 
 
 //click event for div elements (think I just understood a use for this here, unless we code out every id..?)
 //$(document).ready(function(){
 //console.log('still ready');
-$('div').on('click', function(e){
-  console.log('yet more ready')
-  var $element = $(this); //div we're in now it was clicked
-  $element. //highlight if poss, or change picture from white/white bg to image of animal 
-  )
-}
+// $('div').on('click', function(e){
+//   console.log('yet more ready')
+
+//   var $element = $(this); //div we're in now it was clicked
+//   $element. //highlight if poss, or change picture from white/white bg to image of animal 
+});  
 
 //show image
 //then second click same result on that card
