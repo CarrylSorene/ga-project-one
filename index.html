@@ -6,7 +6,32 @@
   <link href="./css/pairs.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h1>Let's Play Pairs!</h1>
+  <div id="main">
+    <div id="intro">
+
+      <h1>Let's Play Pairs!</h1>
+
+      <p class="rules"><img class="welcome" src="images/dinosaur.png" alt="Dinosaur">Hi, my name's Danosaur. <!-- What's your name? with input form element to add name and display!--> 
+      </p>
+      <p class="rules">Do you know how to play pairs? You and your friend take turns choosing two cards to click on. If the pictures match, you win a point. If the cards don't match, see if you can remember where they were. At the end, the player with most points is the winner. </p>
+      <p class="rules">To start, decide who will go first and click on a card. Good luck!</p>
+
+    </div>
+      <div id="gameBoard">
+        <div id="giraffe1" class="card"></div>
+        <div id="griaffe2" class="card"></div>
+        <div id="lion1" class="card"></div>
+        <div id="lion2" class="card"></div>
+        <div id="zebra1" class="card"></div>
+        <div id="zebra2" class="card"></div>
+      </div>
+
+      <div id="result">
+      <p></p> <!-- needed if we have a div and are populating with result and string text via js file? !-->
+      </div>
+
+  </div>
+
 </body>
 <script src="./js/jquery-1.7.2.js"></script>
 <script src="./js/pairs.js"></script>
