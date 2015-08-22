@@ -1,17 +1,21 @@
 body {
-  background-color: white;
+  background-color: #a6c9f5;
   font-family: sans-serif;
+  color: #330099;
 }
 
 #main {
   max-width: 80%;
   margin: 0 auto;
-  font: white;
-  background-color: lightblue;
 }
 
+#intro {
+  margin: 0 auto;
+  max-width: 60%; /* text too wide otherwise. */
+  min-height: 250px; /*to use height of dinosaur image before game board starts*/
+}
 h1 {
-  font-size: 1.2em;
+  font-size: 2em;
   text-align: center;
 }
 
@@ -20,12 +24,24 @@ p {
 }
 
 .welcome {
-  
+  float: right; /* look up how to do that without a float */
+}
+
+.rules {
+  text-align: bottom;
+}
+
+#gameBoard {
+  max-width: 1024px;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .card {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  margin: 20px;
   border: 5px solid orange;
   background-color: white;
   border-radius: 10%;
