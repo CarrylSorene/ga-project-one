@@ -12,7 +12,7 @@ body {
 #intro {
   margin: 0 auto;
   max-width: 60%; /* text too wide otherwise. */
-  min-height: 250px; /*to use height of dinosaur image before game board starts*/
+  min-height: 300px; /*to use height of heading and dinosaur image before game board starts*/
 }
 h1 {
   font-size: 2em;
@@ -24,7 +24,9 @@ p {
 }
 
 .welcome {
-  float: right; /* look up how to do that without a float */
+  /*display: block; puts it above text, though*/
+  /*margin: 0 0 0 500px;*/
+  float: right;
 }
 
 .rules {
@@ -33,8 +35,13 @@ p {
 
 #gameBoard {
   max-width: 1024px;
-  display: inline-block;
+  /*display: inline;*/
   margin: 0 auto;
+}
+
+.row {
+  max-width: 600px;
+  display: inline;
 }
 
 .card {
@@ -45,4 +52,5 @@ p {
   border: 5px solid orange;
   background-color: white;
   border-radius: 10%;
+  /*display: inline-block;*/
 }

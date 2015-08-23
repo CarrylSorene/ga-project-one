@@ -30,6 +30,7 @@ var winningPairs = [['giraffe1', 'giraffe2'], ['lion1', 'lion2'], ['zebra1', 'ze
   });
 });
 
+//example to modify for this:
 // var uppercaseFriends = [];
 // friends.forEach(function(friend){
 //   uppercaseFriends.push(friend.toUpperCase());
@@ -41,19 +42,3 @@ var winningPairs = [['giraffe1', 'giraffe2'], ['lion1', 'lion2'], ['zebra1', 'ze
   
 
 //with a number in [] should be able to filter out that element and move it - why not even console.logging?
-    
-    // while (clickedCards.length === 2) {
-    // if (clickedCards === winningPairs) { //can that look at all arrays of pairs in that outer array? or use for loop, etc?
-    //     player1++; //syntax ok just like that? saw it with var count in another example.
-    //   };
-    //   else {
-    //     clickedCards.push(startingBoard) //syntax?
-    //   };
-    // }; 
-
-// });
-
-  // compare those two cards’ div id’s to the matchingPairs array and decide if the player gets a point.
-
-
-
