@@ -35,7 +35,6 @@ p {
 
 #gameBoard {
   max-width: 1024px;
-  /*display: inline;*/
   margin: 0 auto;
 }
 
@@ -52,5 +51,5 @@ p {
   border: 5px solid orange;
   background-color: white;
   border-radius: 10%;
-  /*display: inline-block;*/
+  display: inline-block;
 }
