@@ -11,7 +11,7 @@
 
       <h1>Let's Play Pairs</h1>
 
-      <p class="rules" id="charName"><img class="welcome" src="images/dinosaur.png" alt="Dinosaur">Hi, my name's Danosaur. <!-- What's your name? with input form element to add name and display!--> 
+      <p class="rules" id="charName"><img class="welcome" src="images/dinosaur.png" alt="Dinosaur">Hi, I'm Dino! <!-- What's your name? with input form element to add name and display!--> 
       </p>
       <p class="rules">Do you know how to play pairs? You and your friend take turns choosing two cards to click on. If the pictures match, you win a point. If the cards don't match, see if you can remember where they were. At the end, the player with most points is the winner. </p>
       <p class="rules">To start, decide who will go first and click on a card. Good luck!</p>
@@ -19,22 +19,38 @@
     </div>
       <div id="gameBoard">
         <div class="row">
-          <div class="card giraffe"><img src="images/cardback.png" alt="Playing Card"></div>
-          <div class="card giraffe"><img src="images/cardback.png" alt="Playing Card"></div>
+          <div class="card elephant" id="elephant"></div>
+          <div class="card elephant" id="elephant"></div>
+          <div class="card goat" id="goat"></div>
+          <div class="card goat" id="goat"></div>
         </div>
         <div class="row">
-          <div class="card lion"><img src="images/cardback.png" alt="Playing Card"></div>
-          <div class="card lion"><img src="images/cardback.png" alt="Playing Card"></div>
+          <div class="card hippo" id="hippo"></div>
+          <div class="card hippo" id="hippo"></div>
+          <div class="card horse" id="horse"></div>
+          <div class="card horse" id="horse"></div>
         </div>
-
         <div class="row">
-          <div class="card zebra"><img src="images/cardback.png" alt="Playing Card"></div>
-          <div class="card zebra"><img src="images/cardback.png" alt="Playing Card"></div>
+          <div class="card lion" id="lion"></div>
+          <div class="card lion" id="lion"></div>
+          <div class="card snake" id="snake"></div>
+          <div class="card snake" id="snake"></div>
+        </div>
+        <div class="row">
+          <div class="card squirrel" id="squirrel"></div>
+          <div class="card squirrel" id="squirrel"></div>
+          <div class="card zebra" id="zebra"></div>
+          <div class="card zebra" id="zebra"></div>
         </div>
       </div>
 
       <div id="result">
-      <p></p> <!-- needed if we have a div and are populating with result and string text via js file? !-->
+      <button class="button" id="scoreButton">Show Your Score</button>
+      <p id="score"></p> <!-- needed if we have a div and are populating with result and string text via js file? !-->
+      </div>
+      
+      <div id="reset">
+      <button class="button" id="resetButton">Play again?</button>
       </div>
 
   </div>

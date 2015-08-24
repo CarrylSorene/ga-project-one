@@ -55,8 +55,12 @@ p {
   display: inline-block;
 }
 
-.white-background {
-  background-color: red;
-  background-image: none !important;
+.button {
+  text-align: center;
+  display: inline-block;
+}
+/*.white-background {
+  background-color: red;*/
+  /*background-image: none !important;*/
   /*display: display;*/
 }
