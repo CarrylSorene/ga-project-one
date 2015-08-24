@@ -1,8 +1,5 @@
   $(document).ready(function(){
   console.log('ready');
-//   $('div').on('click', function(e) { //anonymous callback function
-//     console.log(this); 
-// });
 });
 
 //define variables to start
@@ -12,73 +9,43 @@ var startingBoard = $('.card'); //using class of card to grab them all
 var clickedCards = []; //will move 2 cards clicked each turn into this
 //var counter = 0; //use later if time to make turn-taking work
 
-  //ask players for names - use at the end with declareWinner (& at start of each turn to tell them whose turn it is)
+  //ask players for names - use at the end with declareWinner (& at start of each turn to tell them whose turn it is - on click of changeTurn button)
 
-  //shuffle cards
+  //shuffle cards --> at start of game, along with reset
 
+  //Click to turn over a card - twice per move
 
   $.each(startingBoard, function(index, element){
     //console.log(element);
     $(element).on('click', function(e){ //when a card is clicked
     console.log(e);
     // $(this).css('background-color', 'red');
-    $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'});
+    $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'}); //this.id matches div id
       var animalClass = $(this).attr('class').split(' ')[1]; //once max of 2 are clicked, assign to this var
       console.log("this", this);
-      // $(this).css({"background-image" : "url(./images/ + this.id + .png)","background-repeat": "no-repeat"}); //this.id matches div id
       console.log('this.id', this.id);
       clickedCards.push(animalClass); //also push cards in that var into this array
       console.log(clickedCards);
 
-      //./images + this.id + '.png'
+//Check if clicked cards match winningPairs
 
-//turn cards over to show pictures
-
-// if (clickedCards[0] === "elephant") { //|| clickedCards[1]
-//         $(this).css('background', 'url(./images/elephant.png) center no-repeat');
-//         $(this).css('background-color', 'white');
-//         console.log('hello');
-
-        if (clickedCards.length % 2 === 0) {
-          if (clickedCards[0] === clickedCards[1]) { //if the strings, ie card names, of both elements in array match //not doing it for other matches
-            console.log('first match');
-            player1++; //give a point
-            $('.' + animalClass).off('click') //remove click event from both (instead of unbind)
-          } //closes second if
-          // else if (clickedCards[2] === clickedCards[3]) {
-          //   console.log("second match");
-          // }
+      if (clickedCards.length % 2 === 0) {
+        if (clickedCards[0] === clickedCards[1]) { //if the strings, ie card names, of both elements in array match
+          console.log('match');
+          player1++; //give a point //edit for player2's turn -->
+          $('.' + animalClass).off('click') //remove click event from both
+        } //closes second if
+         
           else {
-            $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'}); //to show 2nd non-matching picture
-            // $(this).delay(2000).addClass('white-background');
-            $(this).delay(2000).fadeOut(500, function() {
-              setTimeout(function() {
-              $(this).addClass('white-background');
-              }, 2000);
-            });
-
-    //       $(this).click(function(){
-    //     $(this).delay(500).addClass('white-background');
-    // });  
-            console.log("background class?", this)
-            // $(this).animate({opacity: 0}, 4000);
-            // $(this).animate({ width: "400px" }, 500);
-            // console.log(this)
-            // $('.card').css('background-image', 'url(./images/cardback.png)'); //line just added -- will this work within original click
+            $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'}); //to show picture
+               };
             console.log("no match");
-            } 
+          
           clickedCards = []; //reset
-          // $('.card').css('background-image', 'url(./images/cardback.png)');
-                  }; //closes else not-matching
-        // if (clickedCards.length % 2 !== 0 && clickedCards.length > 1) {
-        //   console.log("firstCard", firstCard);
-        //   console.log("secondCard", secondCard);
-        //   console.log('add white background');
-        //   firstCard.css('background-image', 'url(./images/cardback.png)');
-        // }; //closes not-matching - show white
-        }); //closes first if
-    }); //closes function on click
- // }); //closes function on startingBoard
+          
+            }; //closes first if
+        }); //closes function on click
+      }); //closes function on startingBoard
 
 //change turn - store number of matches each player makes in an array? to compare lengths to end game & decide winner
 
