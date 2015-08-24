@@ -5,7 +5,7 @@ body {
 }
 
 #main {
-  max-width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -34,22 +34,29 @@ p {
 }
 
 #gameBoard {
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .row {
-  max-width: 600px;
+  max-width: 1200px;
   display: inline;
 }
 
 .card {
-  width: 250px;
-  height: 250px;
-  padding: 20px;
-  margin: 20px;
-  border: 5px solid orange;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 5px solid #330099;
+  background-image: url(../images/cardback.png);
   background-color: white;
   border-radius: 10%;
   display: inline-block;
+}
+
+.white-background {
+  background-color: red;
+  background-image: none !important;
+  /*display: display;*/
 }
