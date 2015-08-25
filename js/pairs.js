@@ -26,6 +26,7 @@ var player1 = 'carryl'; //blank - assigned when click - val of text box
 var player2 = 'jeremy';
 var player;
 var lastPlayer;
+var winner;
 
 function initBoard() {
   $('.card').each(function(index, element){
@@ -68,6 +69,10 @@ function gameSetup() {
   })
 }
 
+function decideWinner(player1, player2){
+  return players[player1].score > players[player2].score ? players[player1].name : players[player2].name
+} 
+
 function checkForMatchingPair(animalClass) {
   if (clickedCards.length % 2 === 0) {
     setTimeout(function() {
@@ -79,6 +84,7 @@ function checkForMatchingPair(animalClass) {
 
         $('.' + animalClass).off('click') //remove click event from both
         if (counter === 8) {
+        $('#result').text('The winner is ' + decideWinner(player1, player2));
           console.log('Game Over');
         }
       } //closes -cardmatching if
