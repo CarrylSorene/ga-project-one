@@ -1,22 +1,25 @@
 body {
   background-color: #a6c9f5;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-family: 'Finger Paint', cursive;
   color: #330099;
+  font-size: 1em;
 }
 
 #main {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 #intro {
   margin: 0 auto;
   max-width: 60%; /* text too wide otherwise. */
-  min-height: 300px; /*to use height of heading and dinosaur image before game board starts*/
+  min-height: 400px; /*to use height of heading and dinosaur image before game board starts*/
 }
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
+  font-family: 'Finger Paint', cursive;
 }
 
 p {
@@ -24,8 +27,6 @@ p {
 }
 
 .welcome {
-  /*display: block; puts it above text, though*/
-  /*margin: 0 0 0 500px;*/
   float: right;
 }
 
@@ -33,21 +34,26 @@ p {
   text-align: bottom;
 }
 
+/*#turn {
+  max-width: 60%
+  text-align: center;
+}*/
+
 #gameBoard {
-  max-width: 1200px;
-  margin: 0 auto;
+  /*max-width: 1280px;*/
+  /*margin: 0 auto;*/
 }
 
 .row {
-  max-width: 1200px;
+  max-width: 1280px;
   display: inline;
 }
 
 .card {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  margin: 10px;
+  width: 240px;
+  height: 240px;
+  padding: 5px;
+  margin: 5px;
   border: 5px solid #330099;
   background-image: url(../images/cardback.png);
   background-color: white;
@@ -55,12 +61,7 @@ p {
   display: inline-block;
 }
 
-.button {
+/*.button {
   text-align: center;
   display: inline-block;
-}
-/*.white-background {
-  background-color: red;*/
-  /*background-image: none !important;*/
-  /*display: display;*/
-}
+}*/

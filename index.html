@@ -4,27 +4,28 @@
 <meta charset="UTF-8">
   <title>Pairs Game</title>
   <link href="./css/pairs.css" type="text/css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div id="main">
     <div id="intro">
-
       <h1>Let's Play Pairs</h1>
-
       <p class="rules" id="charName"><img class="welcome" src="images/dinosaur.png" alt="Dinosaur">Hi, I'm Dino!
       </p>
       <p class="rules">Do you know how to play pairs? You and your friend take turns choosing two cards to click on. If the pictures match, you win a point. If the cards don't match, see if you can remember where they were. At the end, the player with most points is the winner.
       </p>
       <p class="rules">Enter your names and decide who will go first. Good luck!
       </p>
-      <p><input id="name1" type="text" name="input"><!-- <button id='button1' name="button">Enter</button> -->
+      <p><input id="name1" type="text" name="input">
          <input id="name2" type="text" name="input">
          <button id="submit-names" name="button">Enter</button>
       </p>
       <p><span id="turn">The current player is </span>
       </p>
+      <p id="result">
+      </p>
     </div>
-
+    
       <div id="gameBoard">
         <div class="row">
           <div class="card elephant" id="elephant"></div>
@@ -50,10 +51,6 @@
           <div class="card zebra" id="zebra"></div>
           <div class="card zebra" id="zebra"></div>
         </div>
-      </div>
-
-      <div id="result">
-      <!-- <p id="score"></p> -->
       </div>
       
       <!-- <div id="reset">
