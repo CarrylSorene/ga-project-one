@@ -1,6 +1,9 @@
 body {
-  background-color: #a6c9f5;
-  /*font-family: sans-serif;*/
+  /*background-color: #a6c9f5;*/
+  background-image: url(../images/blueclouds.png);
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: repeat-x;
   font-family: 'Finger Paint', cursive;
   color: #330099;
   font-size: 1em;
@@ -9,6 +12,7 @@ body {
 #main {
   max-width: 1280px;
   margin: 0 auto;
+
 }
 
 #intro {
@@ -16,6 +20,7 @@ body {
   max-width: 60%; /* text too wide otherwise. */
   min-height: 400px; /*to use height of heading and dinosaur image before game board starts*/
 }
+
 h1 {
   font-size: 3em;
   text-align: center;
@@ -34,11 +39,6 @@ p {
   text-align: bottom;
 }
 
-/*#turn {
-  max-width: 60%
-  text-align: center;
-}*/
-
 #gameBoard {
   /*max-width: 1280px;*/
   /*margin: 0 auto;*/
@@ -50,9 +50,9 @@ p {
 }
 
 .card {
-  width: 240px;
-  height: 240px;
-  padding: 5px;
+  width: 260px;
+  height: 260px;
+  /*padding: 0 auto;*/
   margin: 5px;
   border: 5px solid #330099;
   background-image: url(../images/cardback.png);
