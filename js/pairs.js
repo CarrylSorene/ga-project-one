@@ -2,28 +2,28 @@ $(document).ready(function(){
   console.log('ready');
   gameSetup();
   initBoard();
+  $('#submit-names').on('click', function() {
+    var firstName = $('#name1').val()
+    var secondName = $('#name2').val()
+    players[firstName] = {
+      score: 0,
+      name: firstName
+    }
+    players[secondName] = {
+      score: 0,
+      name: secondName
+    }
+  })
 });
 
 //define variables to start
-var playerScore1 = 0; //store player scores
-var playerScore2 = 0;
 var startingBoard = $('.card'); //using class of card to grab them all
 var startingBoardArray = []; //store ready to shuffle cards before game
-var clickedCards = []; //store 2 cards clicked each turn into this
-var clickedDOMElements = [] //store the HTML divs
+var clickedCards = []; //store 2 cards clicked each turn
+var clickedDOMElements = [] //store the HTML divs clicked on
 var counter = 0; //add one for every 2 cards matched, game ends when counter reaches 8.
-var players = {
-  carryl: {
-    score: 0,
-    name: 'Carryl'
-  },
-  jeremy: {
-    score: 0,
-    name: 'Jeremy'
-  }
-}
-var player1 = 'carryl'; //blank - assigned when click - val of text box
-var player2 = 'jeremy';
+var players = {}
+
 var player;
 var lastPlayer;
 var winner;
@@ -44,20 +44,20 @@ function initBoard() {
       $(row).append(card);
     })
   })
-
 }
+
 
 //Decide who current player is, based on last player
 
-function currentPlayer() {
-  return lastPlayer === player1 ? player2 : player1  
+function currentPlayer(player1, player2) {
+  return lastPlayer === players[player1].name ? players[player2].name : players[player1].name  
 }
 
 function gameSetup() {
   $('body').on('click', '.card', function(e) {
     console.log($(this))
-    player = currentPlayer()
-
+    player = currentPlayer(Object.keys(players)[0], Object.keys(players)[1])
+    $('p').children('span').text('The current player is: ' + player);
     $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'}); //this.id matches div id
     var animalClass = $(this).attr('class').split(' ')[1];
 
@@ -78,13 +78,13 @@ function checkForMatchingPair(animalClass) {
     setTimeout(function() {
       if (clickedCards[0] === clickedCards[1]) { //if the strings, ie card names, of both elements in array match //put into a function
         console.log('match');
-        var player = currentPlayer() //local var
-        players[player].score++ //[referring back to object]
+        // currentPlayer() //local var
+        players[currentPlayer(Object.keys(players)[0], Object.keys(players)[1])].score++ //[referring back to object]
         counter++; //keep count of total matched pairs per game
 
         $('.' + animalClass).off('click') //remove click event from both
         if (counter === 8) {
-        $('#result').text('The winner is ' + decideWinner(player1, player2));
+        $('#result').text('The winner is ' + decideWinner(Object.keys(players)[0], Object.keys(players)[1]));
           console.log('Game Over');
         }
       } //closes -cardmatching if
@@ -94,7 +94,8 @@ function checkForMatchingPair(animalClass) {
           $(element).css('background-image', 'url(./images/cardback.png)');
         }); //closes
       }; // closes if match
-      lastPlayer = player
+
+      lastPlayer = currentPlayer(Object.keys(players)[0], Object.keys(players)[1])
       clickedCards = []; //reset
       clickedDOMElements = []; //reset
 
@@ -102,5 +103,3 @@ function checkForMatchingPair(animalClass) {
 
   }; //closes clickedCards.length % 2 === 0
 }
-
-// //decide and display winner - also with array to store playerMatches so can compare against lengths
