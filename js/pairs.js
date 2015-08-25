@@ -5,6 +5,8 @@
 //define variables to start
 var player1 = 0; //store player scores
 var player2 = 0;
+var playerMatches1 = 0;
+var playerMatches2 = 0;
 var startingBoard = $('.card'); //using class of card to grab them all
 var clickedCards = []; //will move 2 cards clicked each turn into this
 var clickedDOMElements = []
@@ -41,19 +43,19 @@ $.each(startingBoard, function(index, element){
           })
         } // closes if match
         
-        //Turn-taking - need to add one to counter for every turn regardless of match --> up where cards are clicked etc
-  changeTurn (function(){ //change player turn
-    if (counter % 2 === 0) { //player 1 starts
-        turnText.innerHTML = "It is player 1's turn"; //tell players whose turn it is
+  //       //Turn-taking - need to add one to counter for every turn regardless of match --> up where cards are clicked etc
+  // changeTurn (function(){ //change player turn
+  //   if (counter % 2 === 0) { //player 1 starts
+  //       turnText.innerHTML = "It is player 1's turn"; //tell players whose turn it is
         
-        player1++ //only if they match a pair, or they don't get a point
-    }
-    else {
-        turnText.innerHTML = "It is player2's turn"; //tell players whose turn it is
-        counter++; //what does this do?
-        player2++ //only if they match a pair, or they don't get a point
-    }
-  }); //end of changeTurn function
+  //       player1++ //only if they match a pair, or they don't get a point
+  //   }
+  //   else {
+  //       turnText.innerHTML = "It is player2's turn"; //tell players whose turn it is
+  //       counter++; //what does this do?
+  //       player2++ //only if they match a pair, or they don't get a point
+  //   }
+  // }); //end of changeTurn function
         
         clickedCards = []; //reset
         clickedDOMElements = []; //reset
@@ -66,9 +68,9 @@ $.each(startingBoard, function(index, element){
   }); 
 }); // closes startingboard each
 
-//change turn - store number of matches each player makes in an array? to compare lengths to end game & decide winner
+//change turn - 
 
-//decide and display winner - works better with turn-taking and 2 players - also with array to store playerMatches so can compare against lengths
+//decide and display winner - also with array to store playerMatches so can compare against lengths
           
           $('#scoreButton').on('click', function(e){
             $('#score').text(player1); //would have string for text, but broke on ()
@@ -87,12 +89,13 @@ $.each(startingBoard, function(index, element){
     $('#reset').unbind('click').bind('click', reset);//<-- call main callback
 });
 
+//ditto, for two players
   // if (playerMatches1.length > playerMatches2.length) {
   //   $('#result').text('Player 1 is the winner with ' + player1 ' pairs!');
   // }
   //   else if (playerMatches1.length < playerMatches2.length) {
   //   $('#result').text('Player 2 in the winner with ' + player2 ' pairs!'
   // }
-  //
-
-//play again and reset?
+  // else {
+  //    $('#result').text("It's a tie!")
+  // }
