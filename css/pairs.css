@@ -1,6 +1,6 @@
 body {
-  /*background-color: #a6c9f5;*/
-  background-image: url(../images/blueclouds.png);
+  background-color: #a6c9f5;
+  /*background-image: url(../images/blueclouds.png);*/
   background-size: cover;
   background-position: fixed;
   background-repeat: repeat-x;
