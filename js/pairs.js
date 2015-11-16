@@ -22,7 +22,7 @@ var startingBoardArray = []; //store ready to shuffle cards before game
 var clickedCards = []; //store 2 cards clicked each turn
 var clickedDOMElements = [] //store the HTML divs clicked on
 var counter = 0; //add one for every 2 cards matched, game ends when counter reaches 8.
-var players = {}
+var players = {} //to store names and scores - called again above in opening function
 var player;
 var lastPlayer; //so we can compare that and swap to display who's turn is next
 var winner;
@@ -46,7 +46,7 @@ function initBoard() {
 //Decide who current player is, based on last player
 
 function currentPlayer(player1, player2) {
-  return lastPlayer === players[player1].name ? players[player2].name : players[player1].name  
+  return lastPlayer === players[player1].name ? players[player2].name : players[player1].name
 }
 
 function gameSetup() {
@@ -86,7 +86,7 @@ function checkForMatchingPair(animalClass) {
         $(this).css({'background-image': 'url(./images/' + this.id + '.png)', 'background-repeat': 'no-repeat'}); //to show picture
         $.each(clickedDOMElements, function(index, element) {
           $(element).css('background-image', 'url(./images/cardback.png)');
-        }); //closes
+        }); //closes cardback image function
       }; // closes if match
 
       lastPlayer = currentPlayer(Object.keys(players)[0], Object.keys(players)[1]) //check lastPlayer so current will play next
